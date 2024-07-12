@@ -1,44 +1,75 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE html>
 <html>
 <head>
 <title>Mark Moran - Website</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta charset="UTF-8">
+<style>
+/* Default Light Mode Styles */
+body {
+    background-color: white;
+    color: black;
+    text-align: center;
+}
+
+a {
+    color: black;
+}
+
+/* Dark Mode Styles */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: black;
+        color: white;
+    }
+
+    a {
+        color: white;
+    }
+
+    table {
+        color: white;
+    }
+}
+</style>
 </head>
-<body style="background-color: white; color: black; text-align: center;" link="#000000" alink="#000000" vlink="#000000">
+<body>
 <div>
 <h1>Mark Moran</h1>
-<img name="Slide_Image" src="Pain-Hustlers.jpg" border="0">
+<img name="Slide_Image" src="Pain-Hustlers.jpg" alt="Slide Image" border="0">
 
-<script language="JavaScript">
-src = [ 		"Pain-Hustlers.jpg", "Me-Time.jpg", "Ambulance.jpg", "Yes-Day.jpg", "Playing-With-Fire.jpg", "Pet-Sematary.jpg", "Nappily-Ever-After.jpg", "Little-Evil.jpg", "Amateur.jpg", 
+<script type="text/javascript">
+var src = [ "Pain-Hustlers.jpg", "Me-Time.jpg", "Ambulance.jpg", "Yes-Day.jpg", "Playing-With-Fire.jpg", "Pet-Sematary.jpg", "Nappily-Ever-After.jpg", "Little-Evil.jpg", "Amateur.jpg", 
 		"The-Birth-of-a-Nation.jpg", "Amityville.jpg", "The-Benefactor.jpg", "Boulevard.jpg",  "Against-The-Sun.jpg", 
 		"Lucky-Stiff.jpg","Struck-By-Lightning.jpg", "96-Minutes.jpg", "Beautiful-Boy.jpg", "The-Gold-Retrievers.jpg", 
 	   	"Spread.jpg", "Pretty-Bird.jpg", "Flu-Birds.jpg", "Ghouls.jpg", "Black-Ops.jpg", "Brutal.jpg", "Quid-Pro-Quo.jpg",
-	   	"Walk-The-Talk.jpg", "Chavez-Ravine.jpg" ]
+	   	"Walk-The-Talk.jpg", "Chavez-Ravine.jpg" ];
        
-duration = 4;
-slides=[]; ct=0;
+var duration = 4;
+var slides = [];
+var ct = 0;
+
 function switchSlide() {
-	var n=(ct+1)%src.length;
-	if (slides[n] && (slides[n].complete || slides[n].complete==null)) {
-		document["Slide_Image"].src = slides[ct=n].src;
+	var n = (ct + 1) % src.length;
+	if (slides[n] && (slides[n].complete || slides[n].complete == null)) {
+		document["Slide_Image"].src = slides[ct = n].src;
 	}
-	slides[n=(ct+1)%src.length] = new Image;
+	slides[n = (ct + 1) % src.length] = new Image;
 	slides[n].src = src[n];
-	setTimeout("switchSlide()",duration*1000);
-} onload = function() {
-if (document.images)
-	switchSlide();
+	setTimeout(switchSlide, duration * 1000);
 }
+
+window.addEventListener("load", function() {
+    if (document.images) switchSlide();
+});
 </script>
 <br>
 <br>
-<table style="color: black; width: 720px; text-align: left; margin-left: auto; margin-right: auto;" border="0" cellpadding="0" cellspacing="0">
+<table style="width: 720px; text-align: left; margin-left: auto; margin-right: auto;" border="0" cellpadding="0" cellspacing="0">
 <tbody>
 <tr>
 <td style="width: 720px;">
 <div style="text-align: justify;">
-<p style = "font-family: helvetica neue; font-size:16px;">
+<p style="font-family: helvetica neue; font-size:16px;">
 Mark Moran has produced a wide range of studio and independent movies that have shot all over the U.S. as well as in Canada, Mexico, and Eastern Europe.
 Recent projects include David Yates' <a href="https://www.imdb.com/title/tt15257160/">Pain Hustlers</a> with Emily Blunt & Chris Evans, Michael Bay's <a href="https://www.imdb.com/title/tt4998632/">Ambulance</a> with Jake Gyllenhaal & Yahya Abdul-Mateen, and John Hamburg's <a href="https://www.imdb.com/title/tt0996959/">Me Time</a> with Kevin Hart & Mark Wahlberg.<br> 
 <br>
@@ -63,12 +94,12 @@ Mark graduated <span style="font-style: italic;">summa cum laude</span> from Col
 </tbody>
 </table>
 </div>
-<table style="color: white; width: 720px; text-align: left; margin-left: auto; margin-right: auto;" border="0" cellpadding="0" cellspacing="0">
+<table style="width: 720px; text-align: left; margin-left: auto; margin-right: auto;" border="0" cellpadding="0" cellspacing="0">
 <tbody>
 <tr>
-<td style="text-align: center; width: 20%;"><a href="Mark%20Moran%20Resume.pdf"><img src="CV_logo.png"></a></td>
-<td style="text-align: center; width: 20%;"><a href="https://www.imdb.com/name/nm0602921/"><img src="IMDb_logo.png"></a></td>
-<td style="text-align: center; width: 20%;"><a href="https://www.automaticprojects.com"><img src="AP_logo.png"></a></td>
+<td style="text-align: center; width: 20%;"><a href="Mark%20Moran%20Resume.pdf"><img src="CV_logo.png" alt="CV Logo"></a></td>
+<td style="text-align: center; width: 20%;"><a href="https://www.imdb.com/name/nm0602921/"><img src="IMDb_logo.png" alt="IMDb Logo"></a></td>
+<td style="text-align: center; width: 20%;"><a href="https://www.automaticprojects.com"><img src="AP_logo.png" alt="AP Logo"></a></td>
 </tr>
 </tbody>
 </table>
